@@ -32,8 +32,8 @@ pipeline {
         }
         stage('Deploy') {
             when {
-                expression{
-                 "${params.action}" == 'apply'
+                expression {
+                    params.action == 'apply'
             }
         }
             input {
