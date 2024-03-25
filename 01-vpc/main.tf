@@ -6,7 +6,7 @@ module "vpc_main" {
   vpc_tags     = var.vpc_tags
 
 
-# public subnet
+  # public subnet
   public_subnets_cidr = var.public_subnets_cidr
 
   # private subnet

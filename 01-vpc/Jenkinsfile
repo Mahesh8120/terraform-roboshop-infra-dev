@@ -4,13 +4,11 @@ pipeline {
            label 'AGENT'
         }
         
-}
+    }
      environment { 
         greetings = 'hello jenkins'
-     }
+    }
      
-     
-
     stages {
         stage('init') {
             steps {
@@ -23,9 +21,10 @@ pipeline {
         stage('plan') {
             steps {
                 sh """
-                cd 01-vpc
-                terraform plan
-            }  """
+                   cd 01-vpc
+                   terraform plan
+                """
+            }
         }
         stage('Deploy') {
             input {
@@ -39,12 +38,12 @@ pipeline {
             steps {
                 sh """
                   cd 01-vpc
-                  terraform -auto-approve
+                   terraform -auto-approve
                 """
+                }  
             }
-        }
-        
     }
+    
         post { 
             always { 
                  echo 'I will always say Hello again!'
