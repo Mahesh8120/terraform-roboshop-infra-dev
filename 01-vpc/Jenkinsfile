@@ -5,10 +5,11 @@ pipeline {
         }
         
     }
-     environment { 
-        greetings = 'hello jenkins'
-    }
-     
+     options {
+        //timeout(time: 1, unit: 'HOURS')
+        //disableConcurrentBuilds() 
+        ansiColor('xterm')
+     }
     stages {
         stage('init') {
             steps {
