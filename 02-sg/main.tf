@@ -65,8 +65,6 @@ module "cart_sg" {
   description = "sg for cart"
 }
 
-
-
 module "catalogue_sg" {
   source = "../../terraform-aws-security-group"
   project_name = var.project_name
